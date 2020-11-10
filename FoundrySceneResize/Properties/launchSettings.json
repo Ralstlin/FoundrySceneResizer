@@ -1,8 +1,7 @@
 {
   "profiles": {
     "SceneResize": {
-      "commandName": "Project",
-      "commandLineArgs": "-s \"Calles de Aguasprofundas\" --scale 2"
+      "commandName": "Project"
     }
   }
 }

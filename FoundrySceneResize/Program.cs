@@ -110,6 +110,12 @@ namespace FoundrySceneResize
             selectedScene.height = Convert.ToInt32(selectedScene.height * options.Scale);
             selectedScene.grid = Convert.ToInt32(selectedScene.grid * options.Scale);
 
+            if (selectedScene.grid < 50)
+            {
+                Console.WriteLine("Foundry do not allow grid size lower than 50");
+                return;
+            }
+
             File.Copy(options.FilePath ?? "scenes.db", $"scenes.bkp{DateTime.UtcNow:yyyyMMddTHHmmss}.db");
 
             using (var sw = new StreamWriter(options.FilePath ?? "scenes.db"))
